@@ -17,7 +17,7 @@ Load several files
 ------------------
 
 ```
-java -DpropertyLocations=file:config1.properties,anotherfolder/anotherconfig.properties
+java -DpropertyLocations=file:config1.properties,anotherfolder/file:anotherconfig.properties
 ```
 
 Load from classpath
