@@ -1,12 +1,12 @@
 PropertiesLoader
 ================
 
-Load properties from files into java system properties.
+Load properties from files from classpath or file into Java system properties.
 
-command line usage
+command line usage examples
 ==================
 
-Simple usage
+Load single file
 ------------
 
 ```
@@ -27,18 +27,25 @@ Load from classpath
 java -DpropertyLocations=classpath:/config.properties
 ```
 
-Load the properties inside the java program
+Templating inside the property file
 ===========================================
-
-```java
-PropertiesLoader.loadPropertiesLocationsIntoSystemProperties();
-```
-
-simple templating inside the property file
-------------------------------------------
 
 ```
 firstname=John
 lastname=Smith
 fullname=${firstname} ${lastname}
 ```
+
+
+Usage in Java Code
+===========================================
+
+```
+// do once in code, e.g. static
+PropertiesLoader.loadPropertiesLocationsIntoSystemProperties();
+
+// get a property
+String firstname = System.getProperty("firstname");
+```
+
+
